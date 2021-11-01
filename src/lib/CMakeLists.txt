@@ -33,9 +33,30 @@ add_library("${LIBRARY_NAME}" "${LIBRARY_TYPE_FLAG}" "${Header_Files}" "${Source
 
 target_include_directories(
         "${LIBRARY_NAME}"
-        PRIVATE
+        PUBLIC
+        "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
         "$<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>"
         "$<INSTALL_INTERFACE:include>"
 )
 
 target_link_libraries("${LIBRARY_NAME}" PRIVATE "${LIBACQUIRE_LIBRARIES}")
+
+# install rules
+include(GenerateExportHeader)
+set(_export_file "${CMAKE_CURRENT_SOURCE_DIR}/${LIBRARY_NAME}_export.h")
+generate_export_header("${LIBRARY_NAME}" EXPORT_FILE_NAME "${_export_file}")
+
+set(installable_libs "${LIBRARY_NAME}" "${PROJECT_NAME}_compiler_flags")
+
+if (TARGET "${DEPENDANT_LIBRARY}")
+    list(APPEND installable_libs "${DEPENDANT_LIBRARY}")
+endif ()
+install(FILES
+        "${PROJECT_BINARY_DIR}/src/acquire_amalgamation.h"
+        "${_export_file}"
+        "${Header_Files}"
+        DESTINATION
+        "include")
+install(TARGETS ${installable_libs}
+        DESTINATION "bin"
+        EXPORT "${LIBRARY_NAME}Targets")

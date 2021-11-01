@@ -11,6 +11,10 @@
 #endif
 
 int download_redis(const char* version) {
+    if (strcmp(version, "6.2.6") != 0) {
+        fputs("TODO: Support more than version 6.2.6!", stderr);
+        return EXIT_FAILURE;
+    }
     const char *hash = "5b2b8b7a50111ef395bf1c1d5be11e6e167ac018125055daa8b5c2317ae131ab";
     const int download_resp = download("https://download.redis.io/releases/redis-6.2.6.tar.gz", LIBACQUIRE_SHA256,
                                        hash, "/tmp",
