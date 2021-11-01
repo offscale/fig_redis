@@ -1,7 +1,6 @@
 set(LIBRARY_NAME "${PROJECT_NAME}")
 set(libacquire_git "https://raw.githubusercontent.com/offscale/libacquire/master")
 
-include(CheckIncludeFiles)
 foreach(cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
         "FindLibreSSL.cmake" "libacquire_helpers.cmake"
         "FindLibAcquire.cmake")

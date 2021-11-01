@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.19)
-project(fig_redis VERSION 0.0.1 LANGUAGES C)
+project(version_redis VERSION 0.0.1 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 90)
 set(CMAKE_C_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
+
+include(CheckIncludeFiles)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
 if (BUILD_SHARED_LIBS)
