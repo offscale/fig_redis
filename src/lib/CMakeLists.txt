@@ -22,6 +22,12 @@ endforeach()
 
 get_libacquire_header("${CMAKE_BINARY_DIR}/src/acquire_amalgamation.h")
 
+# Either the library downloads this file, CMake does, or we check the CMake version first,
+# if desired version isn't available download new README.
+# Security issues throughout because checksums must be verified, and we can't verify checksum of this:
+file(DOWNLOAD "https://raw.githubusercontent.com/redis/redis-hashes/master/README"
+        "${CMAKE_BINARY_DIR}/redis_versions")
+
 set(Header_Files "library.h")
 source_group("Header Files" FILES "${Header_Files}")
 

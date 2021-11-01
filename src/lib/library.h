@@ -3,6 +3,6 @@
 
 #include "version_redis_export.h"
 
-extern VERSION_REDIS_EXPORT int download_redis(const char*);
+extern VERSION_REDIS_EXPORT int download_redis(const char *, const char*);
 
 #endif /* OS_REDIS_LIBRARY_H */
