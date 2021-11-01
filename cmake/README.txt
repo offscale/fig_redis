@@ -1,0 +1,1 @@
+rvm/nvm style package manager for redis; written in C89.

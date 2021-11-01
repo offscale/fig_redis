@@ -3,7 +3,6 @@
 #include <stdio.h>
 
 #include <acquire_amalgamation.h>
-#include <assert.h>
 
 #if defined(_MSC_VER) && !defined(__INTEL_COMPILER)
 #define PATH_SEP "\\"
@@ -16,8 +15,12 @@ int download_redis(const char* version) {
     const int download_resp = download("https://download.redis.io/releases/redis-6.2.6.tar.gz", LIBACQUIRE_SHA256,
                                        hash, "/tmp",
                                        false, 0, 0);
-    if (download_resp != EXIT_SUCCESS) printf("download_resp: %d\n", download_resp);
-    assert(download_resp == EXIT_SUCCESS);
-    assert(sha256("/tmp/redis-6.2.6.tar.gz", hash));
+    if (download_resp != EXIT_SUCCESS) {
+        fprintf(stderr, "download_resp: %d\n", download_resp);
+        return download_resp;
+    } else if (!sha256("/tmp/redis-6.2.6.tar.gz", hash)) {
+        fputs("Checksum didn't match", stderr);
+        return EXIT_FAILURE;
+    }
     return EXIT_SUCCESS;
 }
