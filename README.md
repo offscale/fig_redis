@@ -15,14 +15,16 @@ Works with [libacquire](https://github.com/offscale/libacquire), offscale's head
 ### Dependencies
 
   - [CMake](https://cmake.org) (3.19 or later)
-  - C compiler (any that work with CMake, and were released within last 30 years)
+  - C compiler (any that work with CMake, and were released within the last 30 years)
   - Crypto, HTTPS, and unarchiving library (see [libacquire](https://github.com/offscale/libacquire) README for what to override, defaults to OS builtin API)
 
 ### Build
 
-    mkdir build && cd build
-    cmake ..
-    cmake --build .
+```bash
+mkdir build && cd build
+cmake ..
+cmake --build .
+```
 
 ---
 
