@@ -46,10 +46,11 @@ configure_file(
 add_subdirectory("src/lib")
 add_subdirectory("src/cli")
 
-#option(BUILD_TESTS "Build tests" OFF)
-#if (BUILD_TESTS)
-#    add_subdirectory("tests")
-#endif (BUILD_TESTS)
+include(CTest)
+if (BUILD_TESTING)
+    enable_testing()
+    add_subdirectory("src/tests")
+endif (BUILD_TESTING)
 
 install(
         FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.h"

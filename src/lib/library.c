@@ -2,27 +2,13 @@
 
 #include <stdio.h>
 
-#include <acquire_amalgamation.h>
-
 #if defined(_MSC_VER) && !defined(__INTEL_COMPILER)
 #define PATH_SEP "\\"
 #else
 #define PATH_SEP "/"
 #endif
 
-/* strlen("redis-00.00.00.tar.gz") */
-#define MAX_REDIS_FILENAME 21
-/* strlen("https://download.redis.io/releases/redis-00.00.00.tar.gz") == 56 */
-#define MAX_REDIS_URL_LEN 56
-#define MAX_REDIS_HASH 65
 
-struct RedisVersion {
-    char filename[MAX_REDIS_FILENAME];
-    char hash[MAX_REDIS_HASH];
-    char url[MAX_REDIS_URL_LEN];
-    enum Checksum checksum;
-    int status;
-};
 
 struct RedisVersion get_version_info(const char *redis_versions_filepath, const char *version) {
     FILE * fh;
@@ -68,6 +54,7 @@ struct RedisVersion get_version_info(const char *redis_versions_filepath, const 
         }
         if (strcmp(archive_name, columns[1]) == 0) {
             redisVersion.status = EXIT_SUCCESS;
+            get_version();
             strncpy(redisVersion.filename, columns[1], MAX_REDIS_FILENAME);
             strncpy(redisVersion.hash, columns[3], MAX_REDIS_HASH);
             strncpy(redisVersion.url, columns[4], MAX_REDIS_URL_LEN);
