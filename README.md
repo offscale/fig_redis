@@ -6,6 +6,24 @@ version_redis
 
 [rvm](https://rvm.io)/[nvm](https://github.com/nvm-sh/nvm) style package manager for [redis](https://redis.io); written in [C89](https://en.wikipedia.org/wiki/C89_(C_version)).
 
+## Internals
+
+Works with [libacquire](https://github.com/offscale/libacquire), offscale's header-only library that links in with the HTTPS, cryptographic, and unarchiving APIs of the host OS (overridable with `-DUSE_LIBCURL`, `-DLIBFETCH`, etc.).
+
+## Setup
+
+### Dependencies
+
+  - [CMake](https://cmake.org) (3.19 or later)
+  - C compiler (any that work with CMake, and were released within last 30 years)
+  - Crypto, HTTPS, and unarchiving library (see [libacquire](https://github.com/offscale/libacquire) README for what to override, defaults to OS builtin API)
+
+### Build
+
+    mkdir build && cd build
+    cmake ..
+    cmake --build .
+
 ---
 
 ## License
