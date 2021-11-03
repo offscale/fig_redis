@@ -5,7 +5,9 @@
 
 #include "config.h"
 
+#define LIBACQUIRE_IMPLEMENTATION
 #include <acquire.h>
+#undef LIBACQUIRE_IMPLEMENTATION
 
 #include "redis_version_export.h"
 
