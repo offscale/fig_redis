@@ -9,7 +9,7 @@
 
 #include <acquire.h>
 
-#include "version_redis_export.h"
+#include "redis_version_export.h"
 
 /* strlen("3.2.0000-preview") == 16 */
 #define MAX_REDIS_VERSION 16
@@ -29,11 +29,11 @@ struct RedisVersion {
     int status;
 };
 
-extern VERSION_REDIS_EXPORT int download_redis(const char *, const char*);
+extern REDIS_VERSION_EXPORT int download_redis(const char *, const char*);
 
-extern VERSION_REDIS_EXPORT void get_version_from_filename(const char filename[MAX_REDIS_FILENAME],
+extern REDIS_VERSION_EXPORT void get_version_from_filename(const char filename[MAX_REDIS_FILENAME],
                                                            char *version[MAX_REDIS_FILENAME]);
 
-extern VERSION_REDIS_EXPORT int ls_remote(void);
+extern REDIS_VERSION_EXPORT int ls_remote(void);
 
 #endif /* VERSION_REDIS_VERSION_REDIS_H */
