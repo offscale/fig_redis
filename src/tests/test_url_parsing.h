@@ -9,7 +9,7 @@
 
 #include <greatest.h>
 
-#include <library.h>
+#include <version_redis.h>
 
 
 TEST x_test_version_parsing(void) {
@@ -24,7 +24,7 @@ TEST x_test_version_parsing(void) {
 
 /* Suites can group multiple tests with common setup. */
 SUITE (url_parsing_suite) {
-        RUN_TEST(x_test_version_parsing);
+    RUN_TEST(x_test_version_parsing);
 }
 
 #endif /* VERSION_REDIS_TEST_URL_PARSING_H */

@@ -1,3 +1,8 @@
+set(header_prelude
+        "#ifndef VERSION_REDIS_VERSIONS_H\n#define VERSION_REDIS_VERSIONS_H\n\n#include \"version_redis.h\"\n\nstatic struct RedisVersion REDIS_VERSIONS[] = {")
+set(header_conclude
+        "\n#endif /* VERSION_REDIS_VERSIONS_H */\n")
+
 ###################
 # Windows variant #
 ###################
@@ -75,19 +80,18 @@ function (get_releases org repo parent_struct parent_number_of_lines)
                 math(EXPR version_n "${version_n} - 4")  # .zip
                 string(SUBSTRING
                         "${version}"
-                        "0" #  strlen("Redis-x64-")
+                        "0" # was one SUBSTRING rather than this and 3 lines above
                         "${version_n}"
                         version)
 
                 string(APPEND struct "\n\t{\n"
-                        "\t\t\"${name}\",\n"
                         "\t\t\"${version}\",\n"
+                        "\t\t\"${name}\",\n"
                         "\t\t\"${contents_sha256}\",\n"
                         "\t\t\"${browser_download_url}\",\n"
                         "\t\tLIBACQUIRE_SHA256,\n"
                         "\t\tEXIT_SUCCESS\n"
                         "\t},")
-                message("number_of_lines = ${number_of_lines}")
                 math(EXPR number_of_lines "${number_of_lines} + 1")
             endif ()
         endforeach ()
@@ -117,10 +121,12 @@ function (generate_windows_redis_versions header_file)
     string(SUBSTRING "${struct_fields}" "0" "${struct_fields_n}" struct_fields)
 
     file(WRITE "${header_file}"
-            "static struct RedisVersion REDIS_VERSIONS[] = {"
+            "${header_prelude}"
             "${struct_fields}"
             "\n};\n\n"
-            "static const unsigned short REDIS_VERSIONS_N = ${total_number_of_lines};\n")
+            "static const unsigned short REDIS_VERSIONS_N = ${total_number_of_lines};\n"
+            "${header_conclude}")
+    message(STATUS "Generated \"${header_file}\" from GitHub API and local hashing")
 endfunction ()
 
 ###################
@@ -155,7 +161,7 @@ endfunction ()
 function (parse_emit_versions in_fname out_fname)
     file(READ "${in_fname}" contents)
     string(TOUPPER "${name}" upper_name)
-    set(new_contents "static struct RedisVersion REDIS_VERSIONS[] = {\n")
+    set(new_contents "${header_prelude}\n")
     set(line "")
     set(skip_line 0)
     set(number_of_lines 0)
@@ -178,13 +184,13 @@ function (parse_emit_versions in_fname out_fname)
                 math(EXPR number_of_lines "${number_of_lines} + 1")
                 string(APPEND new_contents
                         "\t{\n"
-                        "\t\t\"${filename}\",\n"
                         "\t\t\"${version}\",\n"
+                        "\t\t\"${filename}\",\n"
                         "\t\t\"${hash}\",\n"
-                        "\t\t\"${line}\"\n"
+                        "\t\t\"${line}\",\n"
                         "\t\t${checksum},\n"
                         "\t\tEXIT_SUCCESS\n"
-                        "\t}\n"
+                        "\t},\n"
                         )
             endif ()
             set(skip_line 0)
@@ -218,7 +224,8 @@ function (parse_emit_versions in_fname out_fname)
     endforeach()
     string(APPEND new_contents
             "};\n\n"
-            "static const unsigned short REDIS_VERSIONS_N = ${number_of_lines};\n")
+            "static const unsigned short REDIS_VERSIONS_N = ${number_of_lines};\n"
+            "${header_conclude}")
     file(WRITE "${out_fname}" "${new_contents}")
     message(STATUS "Generated \"${out_fname}\" from \"${in_fname}\"")
 endfunction()
@@ -232,9 +239,4 @@ function (generate_redis_versions header_file)
             "${CMAKE_BINARY_DIR}/redis_versions")
 
     parse_emit_versions("${CMAKE_BINARY_DIR}/redis_versions" "${header_file}")
-
-    #file(WRITE "${header_file}"
-    #        "/* TODO: Rewrite C parser in CMake to generate header AoT */"
-    #        "static struct RedisVersion REDIS_VERSIONS[] = {\n"
-    #        "};")
 endfunction ()

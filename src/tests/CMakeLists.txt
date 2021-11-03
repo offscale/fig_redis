@@ -1,6 +1,7 @@
 #######################
 # Dependency download #
 #######################
+
 set(GREATEST_SHA256 "1292593d95c35eeccc89ffa1c91d6fe53b49f81cbf2c2b7758842b7f3186fcc2")
 set(DOWNLOAD_DIR "${PROJECT_BINARY_DIR}/test_downloads")
 file(MAKE_DIRECTORY "${DOWNLOAD_DIR}")
@@ -16,23 +17,21 @@ file(DOWNLOAD "${GREATEST_URL}" "${GREATEST_FILE}"
 
 set(EXEC_NAME "test_${PROJECT_NAME}")
 
-set(All_Header_Files "${GREATEST_FILE}")
-
-
-#  set(Header_Files "${EXEC_NAME}.h")
-#  source_group("${EXEC_NAME} Header Files" FILES "${Header_Files}")
+set(Header_Files "test_url_parsing.h")
+source_group("${EXEC_NAME} Header Files" FILES "${Header_Files}")
 
 set(Source_Files "test.c")
 source_group("${EXEC_NAME} Source Files" FILES "${Source_Files}")
+
 add_executable("${EXEC_NAME}" "${Header_Files}" "${Source_Files}")
-target_link_libraries("${EXEC_NAME}" PRIVATE "${PROJECT_NAME}")
+
+target_link_libraries("${EXEC_NAME}" PRIVATE "redis_version")
 
 target_include_directories(
         "${EXEC_NAME}"
         PRIVATE
-        #"$<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/src>"
-        "$<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/downloads>"
-        #"$<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>"
+        "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
+        "$<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/downloads>"
         "$<INSTALL_INTERFACE:include>"
 )
 
@@ -56,4 +55,4 @@ install(TARGETS ${installable_libs}
         DESTINATION "bin"
         EXPORT "${EXEC_NAME}Targets")
 
-install(FILES "${All_Header_Files}" DESTINATION "include")
+install(FILES "${GREATEST_FILE}" "${Header_Files}" DESTINATION "include")

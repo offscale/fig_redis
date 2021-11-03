@@ -12,14 +12,14 @@ add_executable(
         "${Source_Files}"
 )
 
-target_include_directories(
-        "${EXEC_NAME}"
-        PRIVATE
-        "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
-        "$<INSTALL_INTERFACE:include>"
-)
+#target_include_directories(
+#        "${EXEC_NAME}"
+#        PRIVATE
+#        "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
+#        "$<INSTALL_INTERFACE:include>"
+#)
 
-target_link_libraries("${EXEC_NAME}" PRIVATE "${PROJECT_NAME}")
+target_link_libraries("${EXEC_NAME}" PRIVATE "redis_version")
 
 if (TARGET "${DEPENDANT_LIBRARY}")
     list(APPEND installable_libs "${DEPENDANT_LIBRARY}")

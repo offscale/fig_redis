@@ -8,7 +8,7 @@ version_redis
 
 ## Internals
 
-Works with [libacquire](https://github.com/offscale/libacquire), offscale's header-only library that links in with the HTTPS, cryptographic, and unarchiving APIs of the host OS (overridable with `-DUSE_LIBCURL`, `-DLIBFETCH`, etc.).
+Works with [libacquire](https://github.com/offscale/libacquire), offscale's header-only library that links in with the HTTPS, cryptographic, and unarchiving APIs of the host OS (overridable with `-DUSE_LIBCURL`, `-DUSE_LIBFETCH`, etc.).
 
 ## Setup
 

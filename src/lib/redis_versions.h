@@ -1,924 +1,931 @@
+#ifndef VERSION_REDIS_VERSIONS_H
+#define VERSION_REDIS_VERSIONS_H
+
+#include "version_redis.h"
+
 static struct RedisVersion REDIS_VERSIONS[] = {
 	{
-		"redis-2.8.0-rc5.tar.gz",
 		"2.8.0rc5",
+		"redis-2.8.0-rc5.tar.gz",
 		"bd27589b71a0b406b982485051f32b7c40c9d2c1",
-		"http://download.redis.io/releases/redis-2.8.0-rc5.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.0-rc5.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.0-rc6.tar.gz",
 		"2.8.0rc6",
+		"redis-2.8.0-rc6.tar.gz",
 		"d13db76145a9844e2a3302f561e907056f9e21a0",
-		"http://download.redis.io/releases/redis-2.8.0-rc6.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.0-rc6.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.0.tar.gz",
 		"2.8.0",
+		"redis-2.8.0.tar.gz",
 		"41fd86128995f06502954dd6d6269c22f5e389f7",
-		"http://download.redis.io/releases/redis-2.8.0.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.0.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.1.tar.gz",
 		"2.8.1",
+		"redis-2.8.1.tar.gz",
 		"1bb493318ff6c0c87334eb95640b89a16e4357d8",
-		"http://download.redis.io/releases/redis-2.8.1.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.1.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.2.tar.gz",
 		"2.8.2",
+		"redis-2.8.2.tar.gz",
 		"3be038b9d095ce3dece7918aae810d14fe770400",
-		"http://download.redis.io/releases/redis-2.8.2.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.2.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.6.17.tar.gz",
 		"2.6.17",
+		"redis-2.6.17.tar.gz",
 		"b5423e1c423d502074cbd0b21bd4e820409d2003",
-		"http://download.redis.io/releases/redis-2.6.17.tar.gz"
+		"http://download.redis.io/releases/redis-2.6.17.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.3.tar.gz",
 		"2.8.3",
+		"redis-2.8.3.tar.gz",
 		"a751371eeed5f5f02965eb34d989c1963dd8d8c7",
-		"http://download.redis.io/releases/redis-2.8.3.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.3.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.4.tar.gz",
 		"2.8.4",
+		"redis-2.8.4.tar.gz",
 		"79b156cc9d8bff5a022fdc6d28d5c42999ddcb4f",
-		"http://download.redis.io/releases/redis-2.8.4.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.4.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.5.tar.gz",
 		"2.8.5",
+		"redis-2.8.5.tar.gz",
 		"f0eb48609ff66ead3c7f06bbe8a8dd1aa7341b73",
-		"http://download.redis.io/releases/redis-2.8.5.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.5.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.6.tar.gz",
 		"2.8.6",
+		"redis-2.8.6.tar.gz",
 		"8680046580c75987961241f2e1e417c242b91a49",
-		"http://download.redis.io/releases/redis-2.8.6.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.6.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.7.tar.gz",
 		"2.8.7",
+		"redis-2.8.7.tar.gz",
 		"acc369093ec74223e6da207921595187f7e64998",
-		"http://download.redis.io/releases/redis-2.8.7.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.7.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.8.tar.gz",
 		"2.8.8",
+		"redis-2.8.8.tar.gz",
 		"aa811f399db58c92c8ec5e48271d307e9ab8eb81",
-		"http://download.redis.io/releases/redis-2.8.8.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.8.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.9.tar.gz",
 		"2.8.9",
+		"redis-2.8.9.tar.gz",
 		"003ccdc175816e0a751919cf508f1318e54aac1e",
-		"http://download.redis.io/releases/redis-2.8.9.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.9.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.10.tar.gz",
 		"2.8.10",
+		"redis-2.8.10.tar.gz",
 		"339ddf82e01a16ad912d1c1d59b02f3fab58d9d9",
-		"http://download.redis.io/releases/redis-2.8.10.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.10.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.11.tar.gz",
 		"2.8.11",
+		"redis-2.8.11.tar.gz",
 		"3e3a4603781514f239f040287d3ef1097eb02a76",
-		"http://download.redis.io/releases/redis-2.8.11.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.11.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.12.tar.gz",
 		"2.8.12",
+		"redis-2.8.12.tar.gz",
 		"56c86a4f9eccaf29f934433c7c67a175e404b2f6",
-		"http://download.redis.io/releases/redis-2.8.12.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.12.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.13.tar.gz",
 		"2.8.13",
+		"redis-2.8.13.tar.gz",
 		"a72925a35849eb2d38a1ea076a3db82072d4ee43",
-		"http://download.redis.io/releases/redis-2.8.13.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.13.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.14.tar.gz",
 		"2.8.14",
+		"redis-2.8.14.tar.gz",
 		"fd0edc045f2b53057d7f6ab38e2fe99086c87e8d",
-		"http://download.redis.io/releases/redis-2.8.14.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.14.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.15.tar.gz",
 		"2.8.15",
+		"redis-2.8.15.tar.gz",
 		"afc0d753cea68a26038775df2dea75a76e3d0e1d",
-		"http://download.redis.io/releases/redis-2.8.15.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.15.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.16.tar.gz",
 		"2.8.16",
+		"redis-2.8.16.tar.gz",
 		"198045c8291dd832788ac8a17d2e565752499942",
-		"http://download.redis.io/releases/redis-2.8.16.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.16.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.17.tar.gz",
 		"2.8.17",
+		"redis-2.8.17.tar.gz",
 		"913479f9d2a283bfaadd1444e17e7bab560e5d1e",
-		"http://download.redis.io/releases/redis-2.8.17.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.17.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.0-rc1.tar.gz",
 		"3.0.0rc1",
+		"redis-3.0.0-rc1.tar.gz",
 		"f0934db86791e32053f8b21ddec5965793edff19",
-		"http://download.redis.io/releases/redis-3.0.0-rc1.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.0-rc1.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.18.tar.gz",
 		"2.8.18",
+		"redis-2.8.18.tar.gz",
 		"129629262fea2bc60daa542f52457e65e6aa7fd5",
-		"http://download.redis.io/releases/redis-2.8.18.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.18.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.19.tar.gz",
 		"2.8.19",
+		"redis-2.8.19.tar.gz",
 		"3e362f4770ac2fdbdce58a5aa951c1967e0facc8",
-		"http://download.redis.io/releases/redis-2.8.19.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.19.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.0.tar.gz",
 		"3.0.0",
+		"redis-3.0.0.tar.gz",
 		"c75fd32900187a7c9f9d07c412ea3b3315691c65",
-		"http://download.redis.io/releases/redis-3.0.0.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.0.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.20.tar.gz",
 		"2.8.20",
+		"redis-2.8.20.tar.gz",
 		"45f134113fb3d75b8c37f7968e46565a70800091",
-		"http://download.redis.io/releases/redis-2.8.20.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.20.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.1.tar.gz",
 		"3.0.1",
+		"redis-3.0.1.tar.gz",
 		"fe1d06599042bfe6a0e738542f302ce9533dde88",
-		"http://download.redis.io/releases/redis-3.0.1.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.1.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.21.tar.gz",
 		"2.8.21",
+		"redis-2.8.21.tar.gz",
 		"52f619d3d301fc7ae498a1d4cb4d44ecebc5b0f9",
-		"http://download.redis.io/releases/redis-2.8.21.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.21.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.2.tar.gz",
 		"3.0.2",
+		"redis-3.0.2.tar.gz",
 		"a38755fe9a669896f7c5d8cd3ebbf76d59712002",
-		"http://download.redis.io/releases/redis-3.0.2.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.2.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.3.tar.gz",
 		"3.0.3",
+		"redis-3.0.3.tar.gz",
 		"0e2d7707327986ae652df717059354b358b83358",
-		"http://download.redis.io/releases/redis-3.0.3.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.3.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.4.tar.gz",
 		"3.0.4",
+		"redis-3.0.4.tar.gz",
 		"cccc58b2b8643930840870f17280fcae57ed7675",
-		"http://download.redis.io/releases/redis-3.0.4.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.4.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.22.tar.gz",
 		"2.8.22",
+		"redis-2.8.22.tar.gz",
 		"78a70b32cdd3a4ccc58880d1821fb828d091bb36",
-		"http://download.redis.io/releases/redis-2.8.22.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.22.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-2.8.23.tar.gz",
 		"2.8.23",
+		"redis-2.8.23.tar.gz",
 		"828fc5d4011e6141fabb2ad6ebc193e8f0d08cfa",
-		"http://download.redis.io/releases/redis-2.8.23.tar.gz"
+		"http://download.redis.io/releases/redis-2.8.23.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.5.tar.gz",
 		"3.0.5",
+		"redis-3.0.5.tar.gz",
 		"ad3ee178c42bfcfd310c72bbddffbbe35db9b4a6",
-		"http://download.redis.io/releases/redis-3.0.5.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.5.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.6.tar.gz",
 		"3.0.6",
+		"redis-3.0.6.tar.gz",
 		"4b1c7b1201984bca8f7f9c6c58862f6928cf0a25",
-		"http://download.redis.io/releases/redis-3.0.6.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.6.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.0.7.tar.gz",
 		"3.0.7",
+		"redis-3.0.7.tar.gz",
 		"e56b4b7e033ae8dbf311f9191cf6fdf3ae974d1c",
-		"http://download.redis.io/releases/redis-3.0.7.tar.gz"
+		"http://download.redis.io/releases/redis-3.0.7.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.0.tar.gz",
 		"3.2.0",
+		"redis-3.2.0.tar.gz",
 		"0c1820931094369c8cc19fc1be62f598bc5961ca",
-		"http://download.redis.io/releases/redis-3.2.0.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.0.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.1.tar.gz",
 		"3.2.1",
+		"redis-3.2.1.tar.gz",
 		"26c0fc282369121b4e278523fce122910b65fbbf",
-		"http://download.redis.io/releases/redis-3.2.1.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.1.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.2.tar.gz",
 		"3.2.2",
+		"redis-3.2.2.tar.gz",
 		"3141be9757532139f445bd5f6f4fae293bc33d27",
-		"http://download.redis.io/releases/redis-3.2.2.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.2.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.3.tar.gz",
 		"3.2.3",
+		"redis-3.2.3.tar.gz",
 		"92d6d93ef2efc91e595c8bf578bf72baff397507",
-		"http://download.redis.io/releases/redis-3.2.3.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.3.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.4.tar.gz",
 		"3.2.4",
+		"redis-3.2.4.tar.gz",
 		"f0fe685cbfdb8c2d8c74613ad8a5a5f33fba40c9",
-		"http://download.redis.io/releases/redis-3.2.4.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.4.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.5.tar.gz",
 		"3.2.5",
+		"redis-3.2.5.tar.gz",
 		"6f6333db6111badaa74519d743589ac4635eba7a",
-		"http://download.redis.io/releases/redis-3.2.5.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.5.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.6.tar.gz",
 		"3.2.6",
+		"redis-3.2.6.tar.gz",
 		"0c7bc5c751bdbc6fabed178db9cdbdd948915d1b",
-		"http://download.redis.io/releases/redis-3.2.6.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.6.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.7.tar.gz",
 		"3.2.7",
+		"redis-3.2.7.tar.gz",
 		"6889af053020cd72ebb16805ead0ce9b3a69a9ef",
-		"http://download.redis.io/releases/redis-3.2.7.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.7.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.8.tar.gz",
 		"3.2.8",
+		"redis-3.2.8.tar.gz",
 		"6780d1abb66f33a97aad0edbe020403d0a15b67f",
-		"http://download.redis.io/releases/redis-3.2.8.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.8.tar.gz",
 		UNSUPPORTED,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.9.tar.gz",
 		"3.2.9",
+		"redis-3.2.9.tar.gz",
 		"6eaacfa983b287e440d0839ead20c2231749d5d6b78bbe0e0ffa3a890c59ff26",
-		"http://download.redis.io/releases/redis-3.2.9.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.9.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.0.tar.gz",
 		"4.0.0",
+		"redis-4.0.0.tar.gz",
 		"d539ae309295721d5c3ed7298939645b6f86ab5d25fdf2a0352ab575c159df2d",
-		"http://download.redis.io/releases/redis-4.0.0.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.0.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.1.tar.gz",
 		"4.0.1",
+		"redis-4.0.1.tar.gz",
 		"2049cd6ae9167f258705081a6ef23bb80b7eff9ff3d0d7481e89510f27457591",
-		"http://download.redis.io/releases/redis-4.0.1.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.1.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.10.tar.gz",
 		"3.2.10",
+		"redis-3.2.10.tar.gz",
 		"411c604a716104f7f5a326abfad32de9cea10f15f987bec45cf86f315e9e63a0",
-		"http://download.redis.io/releases/redis-3.2.10.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.10.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.2.tar.gz",
 		"4.0.2",
+		"redis-4.0.2.tar.gz",
 		"b1a0915dbc91b979d06df1977fe594c3fa9b189f1f3d38743a2948c9f7634813",
-		"http://download.redis.io/releases/redis-4.0.2.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.2.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.11.tar.gz",
 		"3.2.11",
+		"redis-3.2.11.tar.gz",
 		"31ae927cab09f90c9ca5954aab7aeecc3bb4da6087d3d12ba0a929ceb54081b5",
-		"http://download.redis.io/releases/redis-3.2.11.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.11.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.3.tar.gz",
 		"4.0.3",
+		"redis-4.0.3.tar.gz",
 		"412f2634e55fe19e8826fae47935a8efe1e60ba2a48a8953c65e7a6caa459e41",
-		"http://download.redis.io/releases/redis-4.0.3.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.3.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.4.tar.gz",
 		"4.0.4",
+		"redis-4.0.4.tar.gz",
 		"35768145335e874b1b810e23494ad3daa6f442c3dc1d7e3784992ba50799c0cd",
-		"http://download.redis.io/releases/redis-4.0.4.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.4.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.5.tar.gz",
 		"4.0.5",
+		"redis-4.0.5.tar.gz",
 		"d52bf355b96e20905916482962235e0442634c849934adb034f85362b31ed978",
-		"http://download.redis.io/releases/redis-4.0.5.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.5.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.6.tar.gz",
 		"4.0.6",
+		"redis-4.0.6.tar.gz",
 		"769b5d69ec237c3e0481a262ff5306ce30db9b5c8ceb14d1023491ca7be5f6fa",
-		"http://download.redis.io/releases/redis-4.0.6.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.6.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.7.tar.gz",
 		"4.0.7",
+		"redis-4.0.7.tar.gz",
 		"1bba546d44fb40e1fd8be1a15e1a9cc6484bceeea0bbd52919eebc656661ecd1",
-		"http://download.redis.io/releases/redis-4.0.7.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.7.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.8.tar.gz",
 		"4.0.8",
+		"redis-4.0.8.tar.gz",
 		"ff0c38b8c156319249fec61e5018cf5b5fe63a65b61690bec798f4c998c232ad",
-		"http://download.redis.io/releases/redis-4.0.8.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.8.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.9.tar.gz",
 		"4.0.9",
+		"redis-4.0.9.tar.gz",
 		"df4f73bc318e2f9ffb2d169a922dec57ec7c73dd07bccf875695dbeecd5ec510",
-		"http://download.redis.io/releases/redis-4.0.9.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.9.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.12.tar.gz",
 		"3.2.12",
+		"redis-3.2.12.tar.gz",
 		"98c4254ae1be4e452aa7884245471501c9aa657993e0318d88f048093e7f88fd",
-		"http://download.redis.io/releases/redis-3.2.12.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.12.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.10.tar.gz",
 		"4.0.10",
+		"redis-4.0.10.tar.gz",
 		"1db67435a704f8d18aec9b9637b373c34aa233d65b6e174bdac4c1b161f38ca4",
-		"http://download.redis.io/releases/redis-4.0.10.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.10.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0-rc4.tar.gz",
 		"5.0rc4",
+		"redis-5.0-rc4.tar.gz",
 		"bfc7a27d3ba990e154e5b56484061f01962d40b7c77b520ed7a940914b267cec",
-		"http://download.redis.io/releases/redis-5.0-rc4.tar.gz"
+		"http://download.redis.io/releases/redis-5.0-rc4.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.11.tar.gz",
 		"4.0.11",
+		"redis-4.0.11.tar.gz",
 		"fc53e73ae7586bcdacb4b63875d1ff04f68c5474c1ddeda78f00e5ae2eed1bbb",
-		"http://download.redis.io/releases/redis-4.0.11.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.11.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"5.0-rc5.tar.gz",
 		"5.0rc5",
+		"5.0-rc5.tar.gz",
 		"d070c8a3514e40da5cef9ec26dfd594df0468c203c36398ef2d359a32502b548",
-		"https://github.com/antirez/redis/archive/5.0-rc5.tar.gz"
+		"https://github.com/antirez/redis/archive/5.0-rc5.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0-rc6.tar.gz",
 		"5.0rc6",
+		"redis-5.0-rc6.tar.gz",
 		"5e5ffc9184021178c1d89375c5132a2b872a9f77569e8c08ccbdf322acff7ace",
-		"http://download.redis.io/releases/redis-5.0-rc6.tar.gz"
+		"http://download.redis.io/releases/redis-5.0-rc6.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.0.tar.gz",
 		"5.0.0",
+		"redis-5.0.0.tar.gz",
 		"70c98b2d0640b2b73c9d8adb4df63bcb62bad34b788fe46d1634b6cf87dc99a4",
-		"http://download.redis.io/releases/redis-5.0.0.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.0.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.1.tar.gz",
 		"5.0.1",
+		"redis-5.0.1.tar.gz",
 		"82a67c0eec97f9ad379384c30ec391b269e17a3e4596393c808f02db7595abcb",
-		"http://download.redis.io/releases/redis-5.0.1.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.1.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.2.tar.gz",
 		"5.0.2",
+		"redis-5.0.2.tar.gz",
 		"937dde6164001c083e87316aa20dad2f8542af089dfcb1cbb64f9c8300cd00ed",
-		"http://download.redis.io/releases/redis-5.0.2.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.2.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.12.tar.gz",
 		"4.0.12",
+		"redis-4.0.12.tar.gz",
 		"6447259d2eed426a949c9c13f8fdb2d91fb66d9dc915dd50db13b87f46d93162",
-		"http://download.redis.io/releases/redis-4.0.12.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.12.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.3.tar.gz",
 		"5.0.3",
+		"redis-5.0.3.tar.gz",
 		"e290b4ddf817b26254a74d5d564095b11f9cd20d8f165459efa53eb63cd93e02",
-		"http://download.redis.io/releases/redis-5.0.3.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.3.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.13.tar.gz",
 		"4.0.13",
+		"redis-4.0.13.tar.gz",
 		"17d955227966dcd68590be6139e5fe7f2d19fc4fb7334248a904ea9cdd30c1d4",
-		"http://download.redis.io/releases/redis-4.0.13.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.13.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.4.tar.gz",
 		"5.0.4",
+		"redis-5.0.4.tar.gz",
 		"3ce9ceff5a23f60913e1573f6dfcd4aa53b42d4a2789e28fa53ec2bd28c987dd",
-		"http://download.redis.io/releases/redis-5.0.4.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.4.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-4.0.14.tar.gz",
 		"4.0.14",
+		"redis-4.0.14.tar.gz",
 		"1e1e18420a86cfb285933123b04a82e1ebda20bfb0a289472745a087587e93a7",
-		"http://download.redis.io/releases/redis-4.0.14.tar.gz"
+		"http://download.redis.io/releases/redis-4.0.14.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-3.2.13.tar.gz",
 		"3.2.13",
+		"redis-3.2.13.tar.gz",
 		"862979c9853fdb1d275d9eb9077f34621596fec1843e3e7f2e2f09ce09a387ba",
-		"http://download.redis.io/releases/redis-3.2.13.tar.gz"
+		"http://download.redis.io/releases/redis-3.2.13.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.5.tar.gz",
 		"5.0.5",
+		"redis-5.0.5.tar.gz",
 		"2139009799d21d8ff94fc40b7f36ac46699b9e1254086299f8d3b223ca54a375",
-		"http://download.redis.io/releases/redis-5.0.5.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.5.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.6.tar.gz",
 		"5.0.6",
+		"redis-5.0.6.tar.gz",
 		"6624841267e142c5d5d5be292d705f8fb6070677687c5aad1645421a936d22b3",
-		"http://download.redis.io/releases/redis-5.0.6.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.6.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.7.tar.gz",
 		"5.0.7",
+		"redis-5.0.7.tar.gz",
 		"61db74eabf6801f057fd24b590232f2f337d422280fd19486eca03be87d3a82b",
-		"http://download.redis.io/releases/redis-5.0.7.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.7.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0-rc1.tar.gz",
 		"6.0rc1",
+		"redis-6.0-rc1.tar.gz",
 		"3e11d148de0b3c3e573a31b6abb3cba56812aefe3f9a917a445768cc510b5fe3",
-		"http://download.redis.io/releases/redis-6.0-rc1.tar.gz"
+		"http://download.redis.io/releases/redis-6.0-rc1.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0-rc2.tar.gz",
 		"6.0rc2",
+		"redis-6.0-rc2.tar.gz",
 		"60dc45d8ab41de59a12d1163f7f79911f289f4d73b5066e027942eddec259a88",
-		"http://download.redis.io/releases/redis-6.0-rc2.tar.gz"
+		"http://download.redis.io/releases/redis-6.0-rc2.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.8.tar.gz",
 		"5.0.8",
+		"redis-5.0.8.tar.gz",
 		"f3c7eac42f433326a8d981b50dba0169fdfaf46abb23fcda2f933a7552ee4ed7",
-		"http://download.redis.io/releases/redis-5.0.8.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.8.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0-rc3.tar.gz",
 		"6.0rc3",
+		"redis-6.0-rc3.tar.gz",
 		"aa5916b7ee9a7098032cb875f3f0bfb4405f6e2533d7f6284dfbca21f55fc289",
-		"http://download.redis.io/releases/redis-6.0-rc3.tar.gz"
+		"http://download.redis.io/releases/redis-6.0-rc3.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.8.tar.gz",
 		"5.0.8",
+		"redis-5.0.8.tar.gz",
 		"f3c7eac42f433326a8d981b50dba0169fdfaf46abb23fcda2f933a7552ee4ed7",
-		"http://download.redis.io/releases/redis-5.0.8.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.8.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0-rc4.tar.gz",
 		"6.0rc4",
+		"redis-6.0-rc4.tar.gz",
 		"7fdc37fd9451571e90186115a67d7595d49206f90bd7c2b7505b197fd6544358",
-		"http://download.redis.io/releases/redis-6.0-rc4.tar.gz"
+		"http://download.redis.io/releases/redis-6.0-rc4.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.9.tar.gz",
 		"5.0.9",
+		"redis-5.0.9.tar.gz",
 		"53d0ae164cd33536c3d4b720ae9a128ea6166ebf04ff1add3b85f1242090cb85",
-		"http://download.redis.io/releases/redis-5.0.9.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.9.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.0.tar.gz",
 		"6.0.0",
+		"redis-6.0.0.tar.gz",
 		"16d13ec1c3255206deb4818ed444dca6dda1482b551736f0033253c211b788fc",
-		"http://download.redis.io/releases/redis-6.0.0.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.0.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.1.tar.gz",
 		"6.0.1",
+		"redis-6.0.1.tar.gz",
 		"b8756e430479edc162ba9c44dc89ac394316cd482f2dc6b91bcd5fe12593f273",
-		"http://download.redis.io/releases/redis-6.0.1.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.1.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.2.tar.gz",
 		"6.0.2",
+		"redis-6.0.2.tar.gz",
 		"9c37cd4228a57e82e7037094751c63349302b0b86c5e30b778a63a802dfd0109",
-		"http://download.redis.io/releases/redis-6.0.2.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.2.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.3.tar.gz",
 		"6.0.3",
+		"redis-6.0.3.tar.gz",
 		"bca46dce81fe92f7b2de4cf8ae41fbc4b94fbd5674def7f12c87e7f9165cbb3a",
-		"http://download.redis.io/releases/redis-6.0.3.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.3.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.4.tar.gz",
 		"6.0.4",
+		"redis-6.0.4.tar.gz",
 		"3337005a1e0c3aa293c87c313467ea8ac11984921fab08807998ba765c9943de",
-		"http://download.redis.io/releases/redis-6.0.4.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.4.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.5.tar.gz",
 		"6.0.5",
+		"redis-6.0.5.tar.gz",
 		"42cf86a114d2a451b898fcda96acd4d01062a7dbaaad2801d9164a36f898f596",
-		"http://download.redis.io/releases/redis-6.0.5.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.5.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.6.tar.gz",
 		"6.0.6",
+		"redis-6.0.6.tar.gz",
 		"12ad49b163af5ef39466e8d2f7d212a58172116e5b441eebecb4e6ca22363d94",
-		"http://download.redis.io/releases/redis-6.0.6.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.6.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.7.tar.gz",
 		"6.0.7",
+		"redis-6.0.7.tar.gz",
 		"c2aaa1a4c7e72c70adedf976fdd5e1d34d395989283dab9d7840e0a304bb2393",
-		"http://download.redis.io/releases/redis-6.0.7.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.7.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.8.tar.gz",
 		"6.0.8",
+		"redis-6.0.8.tar.gz",
 		"04fa1fddc39bd1aecb6739dd5dd73858a3515b427acd1e2947a66dadce868d68",
-		"http://download.redis.io/releases/redis-6.0.8.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.8.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.10.tar.gz",
 		"5.0.10",
+		"redis-5.0.10.tar.gz",
 		"e30a5e7d1593a715cdda2a82deb90190816d06c9d1dc1ef5b36874878c683382",
-		"http://download.redis.io/releases/redis-5.0.10.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.10.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.9.tar.gz",
 		"6.0.9",
+		"redis-6.0.9.tar.gz",
 		"dc2bdcf81c620e9f09cfd12e85d3bc631c897b2db7a55218fd8a65eaa37f86dd",
-		"http://download.redis.io/releases/redis-6.0.9.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.9.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2-rc1.tar.gz",
 		"6.2rc1",
+		"redis-6.2-rc1.tar.gz",
 		"92fc13f57b31cb6425c590b9c6b0bf611450f66b18fe92b9d5893b3a9760c438",
-		"http://download.redis.io/releases/redis-6.2-rc1.tar.gz"
+		"http://download.redis.io/releases/redis-6.2-rc1.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.10.tar.gz",
 		"6.0.10",
+		"redis-6.0.10.tar.gz",
 		"79bbb894f9dceb33ca699ee3ca4a4e1228be7fb5547aeb2f99d921e86c1285bd",
-		"http://download.redis.io/releases/redis-6.0.10.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.10.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2-rc2.tar.gz",
 		"6.2rc2",
+		"redis-6.2-rc2.tar.gz",
 		"7153bbbd751f61ea70e649e0d19be6e7e78da9864527d46d10519e9a03cb0924",
-		"http://download.redis.io/releases/redis-6.2-rc2.tar.gz"
+		"http://download.redis.io/releases/redis-6.2-rc2.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2-rc3.tar.gz",
 		"6.2rc3",
+		"redis-6.2-rc3.tar.gz",
 		"f35bba2af553fb58b2068ee581f316cefe0c00041e48fc944bd962e65777851c",
-		"http://download.redis.io/releases/redis-6.2-rc3.tar.gz"
+		"http://download.redis.io/releases/redis-6.2-rc3.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.11.tar.gz",
 		"5.0.11",
+		"redis-5.0.11.tar.gz",
 		"418135c453a94aac24c24243b041fb978fcc3ea4e1e1f996c1d64b16ae6ac1aa",
-		"http://download.redis.io/releases/redis-5.0.11.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.11.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2.0.tar.gz",
 		"6.2.0",
+		"redis-6.2.0.tar.gz",
 		"67d624c25d962bd68aff8812a135df85bad07556b8825f3bcd5b522a9932dbca",
-		"http://download.redis.io/releases/redis-6.2.0.tar.gz"
+		"http://download.redis.io/releases/redis-6.2.0.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.11.tar.gz",
 		"6.0.11",
+		"redis-6.0.11.tar.gz",
 		"c927f2d110e88fda308526a1809a4d7dfcd004319f0de66d40a58a42aec23c5f",
-		"http://download.redis.io/releases/redis-6.0.11.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.11.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.12.tar.gz",
 		"5.0.12",
+		"redis-5.0.12.tar.gz",
 		"7040eba5910f7c3d38f05ea5a1d88b480488215bdbd2e10ec70d18380108e31e",
-		"http://download.redis.io/releases/redis-5.0.12.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.12.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.12.tar.gz",
 		"6.0.12",
+		"redis-6.0.12.tar.gz",
 		"f16ad973d19f80f121e53794d5eb48a997e2c6a85b5be41bb3b66750cc17bf6b",
-		"http://download.redis.io/releases/redis-6.0.12.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.12.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2.1.tar.gz",
 		"6.2.1",
+		"redis-6.2.1.tar.gz",
 		"cd222505012cce20b25682fca931ec93bd21ae92cb4abfe742cf7b76aa907520",
-		"http://download.redis.io/releases/redis-6.2.1.tar.gz"
+		"http://download.redis.io/releases/redis-6.2.1.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2.2.tar.gz",
 		"6.2.2",
+		"redis-6.2.2.tar.gz",
 		"7a260bb74860f1b88c3d5942bf8ba60ca59f121c6dce42d3017bed6add0b9535",
-		"http://download.redis.io/releases/redis-6.2.2.tar.gz"
+		"http://download.redis.io/releases/redis-6.2.2.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.13.tar.gz",
 		"6.0.13",
+		"redis-6.0.13.tar.gz",
 		"3049763f4553ddd5a69552f41da3dd7dde9fbc524dbb15e517fee24cc73b790c",
-		"http://download.redis.io/releases/redis-6.0.13.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.13.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2.3.tar.gz",
 		"6.2.3",
+		"redis-6.2.3.tar.gz",
 		"98ed7d532b5e9671f5df0825bb71f0f37483a16546364049384c63db8764512b",
-		"http://download.redis.io/releases/redis-6.2.3.tar.gz"
+		"http://download.redis.io/releases/redis-6.2.3.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.14.tar.gz",
 		"6.0.14",
+		"redis-6.0.14.tar.gz",
 		"c3e60c928b183ca9fe8e878936a6f8ba99e0441b9b6e04d2412a750ea576c649",
-		"http://download.redis.io/releases/redis-6.0.14.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.14.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2.4.tar.gz",
 		"6.2.4",
+		"redis-6.2.4.tar.gz",
 		"ba32c406a10fc2c09426e2be2787d74ff204eb3a2e496d87cff76a476b6ae16e",
-		"http://download.redis.io/releases/redis-6.2.4.tar.gz"
+		"http://download.redis.io/releases/redis-6.2.4.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.13.tar.gz",
 		"5.0.13",
+		"redis-5.0.13.tar.gz",
 		"2b617aa2d6ad66c6a5d99fc8590c6b83b40d391fd1184c6eeab30df31f6a7208",
-		"http://download.redis.io/releases/redis-5.0.13.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.13.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.15.tar.gz",
 		"6.0.15",
+		"redis-6.0.15.tar.gz",
 		"4bc295264a95bc94423c162a9eee66135a24a51eefe5f53f18fc9bde5c3a9f74",
-		"http://download.redis.io/releases/redis-6.0.15.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.15.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2.5.tar.gz",
 		"6.2.5",
+		"redis-6.2.5.tar.gz",
 		"4b9a75709a1b74b3785e20a6c158cab94cf52298aa381eea947a678a60d551ae",
-		"http://download.redis.io/releases/redis-6.2.5.tar.gz"
+		"http://download.redis.io/releases/redis-6.2.5.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-5.0.14.tar.gz",
 		"5.0.14",
+		"redis-5.0.14.tar.gz",
 		"3ea5024766d983249e80d4aa9457c897a9f079957d0fb1f35682df233f997f32",
-		"http://download.redis.io/releases/redis-5.0.14.tar.gz"
+		"http://download.redis.io/releases/redis-5.0.14.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.0.16.tar.gz",
 		"6.0.16",
+		"redis-6.0.16.tar.gz",
 		"3639bbf29aca1a1670de1ab2ce224d6511c63969e7e590d3cdf8f7888184fa19",
-		"http://download.redis.io/releases/redis-6.0.16.tar.gz"
+		"http://download.redis.io/releases/redis-6.0.16.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 	{
-		"redis-6.2.6.tar.gz",
 		"6.2.6",
+		"redis-6.2.6.tar.gz",
 		"5b2b8b7a50111ef395bf1c1d5be11e6e167ac018125055daa8b5c2317ae131ab",
-		"http://download.redis.io/releases/redis-6.2.6.tar.gz"
+		"http://download.redis.io/releases/redis-6.2.6.tar.gz",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
-	}
+	},
 };
 
 static const unsigned short REDIS_VERSIONS_N = 115;
+
+#endif /* VERSION_REDIS_VERSIONS_H */

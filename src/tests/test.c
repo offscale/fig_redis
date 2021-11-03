@@ -1,9 +1,3 @@
-#ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS 1
-#endif
-
-#include <greatest.h>
-
 #include "test_url_parsing.h"
 
 /* Add definitions that need to be in the test runner's main file. */

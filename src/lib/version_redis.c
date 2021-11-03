@@ -1,14 +1,12 @@
-#include "library.h"
-
 #include <stdio.h>
 
-#if defined(_MSC_VER) && !defined(__INTEL_COMPILER)
-#define PATH_SEP "\\"
+#include "version_redis.h"
+
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+#include <windows_redis_versions.h>
 #else
-#define PATH_SEP "/"
+#include <redis_versions.h>
 #endif
-
-
 
 struct RedisVersion get_version_info(const char *redis_versions_filepath, const char *version) {
     FILE * fh;
@@ -54,7 +52,8 @@ struct RedisVersion get_version_info(const char *redis_versions_filepath, const 
         }
         if (strcmp(archive_name, columns[1]) == 0) {
             redisVersion.status = EXIT_SUCCESS;
-            get_version();
+            char *version_arr_ptr = redisVersion.version;
+            get_version_from_filename(redisVersion.filename, &version_arr_ptr);
             strncpy(redisVersion.filename, columns[1], MAX_REDIS_FILENAME);
             strncpy(redisVersion.hash, columns[3], MAX_REDIS_HASH);
             strncpy(redisVersion.url, columns[4], MAX_REDIS_URL_LEN);
@@ -85,6 +84,10 @@ int download_redis(const char *download_folder, const char* version) {
          *
          * Otherwise, hashes and download links become only a verification and not a
          * security measure.
+         *
+         * Note however for versions released before this binary was released, it is
+         * actually embedded within the binary so if there are issues others will
+         * (hopefully!) find them, as everyone will have the same embed.
          * */
         download("https://raw.githubusercontent.com/redis/redis-hashes/master/README",
                  UNSUPPORTED, NULL, download_folder,
@@ -128,5 +131,28 @@ int download_redis(const char *download_folder, const char* version) {
                         full_local_fname, redisVersion.hash);
         return EXIT_FAILURE;
     }
+    return EXIT_SUCCESS;
+}
+
+extern VERSION_REDIS_EXPORT void get_version_from_filename(const char filename[MAX_REDIS_FILENAME],
+                                                           char *version[MAX_REDIS_FILENAME]) {
+    size_t i, j, penultimate_dot=0, last_dot=0;
+    for(i= strlen((const char *) filename) - 1, j=0; i != 0; i--, j++) {
+        switch (filename[i]) {
+            case '.':
+                if (penultimate_dot == 0)
+                    penultimate_dot = i;
+                else last_dot = i;
+            default:
+                *version[j] = filename[i];
+        }
+    }
+    *version[j+1] = '\0';
+}
+
+int ls_remote(void) {
+    unsigned short i;
+    for(i=0; i<REDIS_VERSIONS_N; i++)
+        puts(REDIS_VERSIONS[i].version);
     return EXIT_SUCCESS;
 }
