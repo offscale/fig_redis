@@ -54,7 +54,13 @@ target_include_directories(
         "$<INSTALL_INTERFACE:include>"
 )
 
-target_link_libraries("${LIBRARY_NAME}" PRIVATE "${LIBACQUIRE_LIBRARIES}")
+target_link_libraries("${LIBRARY_NAME}" PUBLIC "${LIBACQUIRE_LIBRARIES}")
+
+if (NOT DEFINED TARGET_ARCH)
+    set(TARGET_ARCH ${CMAKE_HOST_SYSTEM_PROCESSOR})
+endif ()
+
+configure_file(config.h.in "${PROJECT_BINARY_DIR}/src/config.h" @ONLY)
 
 # install rules
 include(GenerateExportHeader)
@@ -68,6 +74,7 @@ if (TARGET "${DEPENDANT_LIBRARY}")
 endif ()
 install(FILES
         "${PROJECT_BINARY_DIR}/src/acquire.h"
+        "${PROJECT_BINARY_DIR}/src/config.h"
         "${_export_file}"
         "${Header_Files}"
         DESTINATION

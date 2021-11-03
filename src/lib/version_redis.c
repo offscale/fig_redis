@@ -136,6 +136,7 @@ int download_redis(const char *download_folder, const char* version) {
 
 extern void get_version_from_filename(const char filename[MAX_REDIS_FILENAME],
                                       char *version[MAX_REDIS_FILENAME]) {
+    /* TODO: Finish impl */
     size_t i, j, penultimate_dot=0, last_dot=0;
     for(i= strlen((const char *) filename) - 1, j=0; i != 0; i--, j++) {
         switch (filename[i]) {

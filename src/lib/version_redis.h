@@ -3,9 +3,7 @@
 
 #include <string.h>
 
-/* just for testing, TODO: Remove */
-#define USE_COMMON_CRYPTO 1
-#define USE_LIBCURL 1
+#include "config.h"
 
 #include <acquire.h>
 

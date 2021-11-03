@@ -1,0 +1,28 @@
+#ifndef VERSION_REDIS_CONFIG_H
+#define VERSION_REDIS_CONFIG_H
+
+#define VERSION "@version_redis_VERSION@"
+
+/* Crypto library */
+
+#define CRYPTO_LIB "@CRYPTO_LIB@"
+
+#cmakedefine USE_COMMON_CRYPTO 1
+
+#cmakedefine USE_OPENSSL 1
+
+#cmakedefine USE_WINCRYPT 1
+
+/* Networking library */
+
+#cmakedefine USE_WININET 1
+
+#cmakedefine USE_LIBCURL 1
+
+#cmakedefine USE_LIBFETCH 1
+
+/* Architecture (needed by MSVC) */
+
+#define _@TARGET_ARCH@_
+
+#endif /* VERSION_REDIS_CONFIG_H */
