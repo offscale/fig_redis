@@ -4,11 +4,15 @@ set(libacquire_git "https://raw.githubusercontent.com/offscale/libacquire/master
 foreach(cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
         "FindLibreSSL.cmake" "libacquire_helpers.cmake"
         "FindLibAcquire.cmake")
-    if (NOT EXISTS "${CMAKE_BINARY_DIR}/cmake/${cm}")
+    set(local_cmake_file "${CMAKE_BINARY_DIR}/cmake/${cm}")
+    if (NOT EXISTS "${local_cmake_file}")
         file(DOWNLOAD "${libacquire_git}/cmake/${cm}"
-                "${CMAKE_BINARY_DIR}/cmake/${cm}")
+                "${local_cmake_file}")
     endif ()
-    if (NOT cm STREQUAL "FindLibreSSL.cmake")
+    file(SIZE "${local_cmake_file}" local_cmake_file_size)
+    if (local_cmake_file_size EQUAL 0)
+        message(FATAL_ERROR "Download failed of \"${cm}\" from \"${libacquire_git}/cmake/${cm}\"")
+    elseif (NOT cm STREQUAL "FindLibreSSL.cmake")
         include("${CMAKE_BINARY_DIR}/cmake/${cm}")
         if (cm STREQUAL "libacquire_helpers.cmake")
             set_crypto_lib()

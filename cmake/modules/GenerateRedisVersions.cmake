@@ -18,11 +18,11 @@ function (get_releases org repo parent_struct parent_number_of_lines)
                 HTTPHEADER "Accept: application/vnd.github.v3+json"
                 )
     endif ()
-    file(READ "${json_file}" json_contents)
-    string(LENGTH "${json_contents}" n)
-    if (n EQUAL 0)
-        message(FATAL_ERROR "Unable to download")
+    file(SIZE "${json_file}" json_filesize)
+    if (json_filesize EQUAL 0)
+        message(FATAL_ERROR "Unable to download \"${json_file}\"")
     endif ()
+    file(READ "${json_file}" json_contents)
 
     string(JSON json_contents_n
             LENGTH "${json_contents}")
@@ -61,6 +61,9 @@ function (get_releases org repo parent_struct parent_number_of_lines)
                     GET "${asset_json}" "name")
 
             if (content_type STREQUAL "application/zip" AND NOT EXISTS "${org}/${name}")
+                string(JSON remote_archive_size
+                        GET "${asset_json}" "size")
+
                 string(JSON browser_download_url
                         GET "${asset_json}" "browser_download_url"
                         )
@@ -68,7 +71,11 @@ function (get_releases org repo parent_struct parent_number_of_lines)
                 if (NOT EXISTS "${dl_to}")
                     file(DOWNLOAD "${browser_download_url}" "${dl_to}")
                 endif ()
+                file(SIZE "${dl_to}" archive_size)
                 file(READ "${dl_to}" contents)
+                if (NOT (remote_archive_size EQUAL archive_size))
+                    message(FATAL_ERROR "Expected ${remote_archive_size} got ${archive_size} on \"${name}\"")
+                endif ()
                 string(SHA256 contents_sha256 "${contents}")
 
                 string(SUBSTRING

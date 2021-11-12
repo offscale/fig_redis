@@ -147,9 +147,9 @@ int download_redis(const char *download_folder, const char* version) {
 extern void get_version_from_filename(const char filename[MAX_REDIS_FILENAME],
                                       char version[MAX_REDIS_VERSION]) {
     const char *extension = get_extension(filename);
-    const size_t extension_n = strlen(extension);
-    const size_t filename_n = strlen(filename);
-    const size_t n = filename_n - extension_n;
+    const size_t extension_n = strlen(extension),
+                 filename_n = strlen(filename),
+                 n = filename_n - extension_n;
 
     size_t i, j, k;
     bool munch;
