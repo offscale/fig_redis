@@ -16,6 +16,8 @@ foreach(cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
             set_ssl_lib()
 
             set_http_https_lib()
+
+            set_extract_lib()
         endif ()
     endif ()
 endforeach()
@@ -44,7 +46,7 @@ source_group("Header Files" FILES "${Header_Files}")
 set(Source_Files "version_redis.c")
 source_group("Source Files" FILES "${Source_Files}")
 
-add_library("${LIBRARY_NAME}" "${LIBRARY_TYPE_FLAG}" "${Header_Files}" "${Source_Files}")
+add_library("${LIBRARY_NAME}" "${LIBRARY_TYPE_FLAG}" "${Header_Files}" "${PROJECT_BINARY_DIR}/src/acquire.h" "${Source_Files}")
 
 target_include_directories(
         "${LIBRARY_NAME}"

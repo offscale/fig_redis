@@ -9,7 +9,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.0-rc5.tar.gz",
 		"bd27589b71a0b406b982485051f32b7c40c9d2c1",
 		"http://download.redis.io/releases/redis-2.8.0-rc5.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -17,7 +17,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.0-rc6.tar.gz",
 		"d13db76145a9844e2a3302f561e907056f9e21a0",
 		"http://download.redis.io/releases/redis-2.8.0-rc6.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -25,7 +25,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.0.tar.gz",
 		"41fd86128995f06502954dd6d6269c22f5e389f7",
 		"http://download.redis.io/releases/redis-2.8.0.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -33,7 +33,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.1.tar.gz",
 		"1bb493318ff6c0c87334eb95640b89a16e4357d8",
 		"http://download.redis.io/releases/redis-2.8.1.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -41,7 +41,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.2.tar.gz",
 		"3be038b9d095ce3dece7918aae810d14fe770400",
 		"http://download.redis.io/releases/redis-2.8.2.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -49,7 +49,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.6.17.tar.gz",
 		"b5423e1c423d502074cbd0b21bd4e820409d2003",
 		"http://download.redis.io/releases/redis-2.6.17.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -57,7 +57,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.3.tar.gz",
 		"a751371eeed5f5f02965eb34d989c1963dd8d8c7",
 		"http://download.redis.io/releases/redis-2.8.3.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -65,7 +65,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.4.tar.gz",
 		"79b156cc9d8bff5a022fdc6d28d5c42999ddcb4f",
 		"http://download.redis.io/releases/redis-2.8.4.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -73,7 +73,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.5.tar.gz",
 		"f0eb48609ff66ead3c7f06bbe8a8dd1aa7341b73",
 		"http://download.redis.io/releases/redis-2.8.5.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -81,7 +81,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.6.tar.gz",
 		"8680046580c75987961241f2e1e417c242b91a49",
 		"http://download.redis.io/releases/redis-2.8.6.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -89,7 +89,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.7.tar.gz",
 		"acc369093ec74223e6da207921595187f7e64998",
 		"http://download.redis.io/releases/redis-2.8.7.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -97,7 +97,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.8.tar.gz",
 		"aa811f399db58c92c8ec5e48271d307e9ab8eb81",
 		"http://download.redis.io/releases/redis-2.8.8.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -105,7 +105,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.9.tar.gz",
 		"003ccdc175816e0a751919cf508f1318e54aac1e",
 		"http://download.redis.io/releases/redis-2.8.9.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -113,7 +113,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.10.tar.gz",
 		"339ddf82e01a16ad912d1c1d59b02f3fab58d9d9",
 		"http://download.redis.io/releases/redis-2.8.10.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -121,7 +121,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.11.tar.gz",
 		"3e3a4603781514f239f040287d3ef1097eb02a76",
 		"http://download.redis.io/releases/redis-2.8.11.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -129,7 +129,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.12.tar.gz",
 		"56c86a4f9eccaf29f934433c7c67a175e404b2f6",
 		"http://download.redis.io/releases/redis-2.8.12.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -137,7 +137,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.13.tar.gz",
 		"a72925a35849eb2d38a1ea076a3db82072d4ee43",
 		"http://download.redis.io/releases/redis-2.8.13.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -145,7 +145,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.14.tar.gz",
 		"fd0edc045f2b53057d7f6ab38e2fe99086c87e8d",
 		"http://download.redis.io/releases/redis-2.8.14.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -153,7 +153,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.15.tar.gz",
 		"afc0d753cea68a26038775df2dea75a76e3d0e1d",
 		"http://download.redis.io/releases/redis-2.8.15.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -161,7 +161,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.16.tar.gz",
 		"198045c8291dd832788ac8a17d2e565752499942",
 		"http://download.redis.io/releases/redis-2.8.16.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -169,7 +169,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.17.tar.gz",
 		"913479f9d2a283bfaadd1444e17e7bab560e5d1e",
 		"http://download.redis.io/releases/redis-2.8.17.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -177,7 +177,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.0-rc1.tar.gz",
 		"f0934db86791e32053f8b21ddec5965793edff19",
 		"http://download.redis.io/releases/redis-3.0.0-rc1.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -185,7 +185,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.18.tar.gz",
 		"129629262fea2bc60daa542f52457e65e6aa7fd5",
 		"http://download.redis.io/releases/redis-2.8.18.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -193,7 +193,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.19.tar.gz",
 		"3e362f4770ac2fdbdce58a5aa951c1967e0facc8",
 		"http://download.redis.io/releases/redis-2.8.19.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -201,7 +201,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.0.tar.gz",
 		"c75fd32900187a7c9f9d07c412ea3b3315691c65",
 		"http://download.redis.io/releases/redis-3.0.0.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -209,7 +209,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.20.tar.gz",
 		"45f134113fb3d75b8c37f7968e46565a70800091",
 		"http://download.redis.io/releases/redis-2.8.20.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -217,7 +217,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.1.tar.gz",
 		"fe1d06599042bfe6a0e738542f302ce9533dde88",
 		"http://download.redis.io/releases/redis-3.0.1.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -225,7 +225,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.21.tar.gz",
 		"52f619d3d301fc7ae498a1d4cb4d44ecebc5b0f9",
 		"http://download.redis.io/releases/redis-2.8.21.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -233,7 +233,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.2.tar.gz",
 		"a38755fe9a669896f7c5d8cd3ebbf76d59712002",
 		"http://download.redis.io/releases/redis-3.0.2.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -241,7 +241,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.3.tar.gz",
 		"0e2d7707327986ae652df717059354b358b83358",
 		"http://download.redis.io/releases/redis-3.0.3.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -249,7 +249,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.4.tar.gz",
 		"cccc58b2b8643930840870f17280fcae57ed7675",
 		"http://download.redis.io/releases/redis-3.0.4.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -257,7 +257,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.22.tar.gz",
 		"78a70b32cdd3a4ccc58880d1821fb828d091bb36",
 		"http://download.redis.io/releases/redis-2.8.22.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -265,7 +265,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-2.8.23.tar.gz",
 		"828fc5d4011e6141fabb2ad6ebc193e8f0d08cfa",
 		"http://download.redis.io/releases/redis-2.8.23.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -273,7 +273,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.5.tar.gz",
 		"ad3ee178c42bfcfd310c72bbddffbbe35db9b4a6",
 		"http://download.redis.io/releases/redis-3.0.5.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -281,7 +281,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.6.tar.gz",
 		"4b1c7b1201984bca8f7f9c6c58862f6928cf0a25",
 		"http://download.redis.io/releases/redis-3.0.6.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -289,7 +289,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.0.7.tar.gz",
 		"e56b4b7e033ae8dbf311f9191cf6fdf3ae974d1c",
 		"http://download.redis.io/releases/redis-3.0.7.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -297,7 +297,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.0.tar.gz",
 		"0c1820931094369c8cc19fc1be62f598bc5961ca",
 		"http://download.redis.io/releases/redis-3.2.0.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -305,7 +305,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.1.tar.gz",
 		"26c0fc282369121b4e278523fce122910b65fbbf",
 		"http://download.redis.io/releases/redis-3.2.1.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -313,7 +313,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.2.tar.gz",
 		"3141be9757532139f445bd5f6f4fae293bc33d27",
 		"http://download.redis.io/releases/redis-3.2.2.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -321,7 +321,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.3.tar.gz",
 		"92d6d93ef2efc91e595c8bf578bf72baff397507",
 		"http://download.redis.io/releases/redis-3.2.3.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -329,7 +329,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.4.tar.gz",
 		"f0fe685cbfdb8c2d8c74613ad8a5a5f33fba40c9",
 		"http://download.redis.io/releases/redis-3.2.4.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -337,7 +337,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.5.tar.gz",
 		"6f6333db6111badaa74519d743589ac4635eba7a",
 		"http://download.redis.io/releases/redis-3.2.5.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -345,7 +345,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.6.tar.gz",
 		"0c7bc5c751bdbc6fabed178db9cdbdd948915d1b",
 		"http://download.redis.io/releases/redis-3.2.6.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -353,7 +353,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.7.tar.gz",
 		"6889af053020cd72ebb16805ead0ce9b3a69a9ef",
 		"http://download.redis.io/releases/redis-3.2.7.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{
@@ -361,7 +361,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		"redis-3.2.8.tar.gz",
 		"6780d1abb66f33a97aad0edbe020403d0a15b67f",
 		"http://download.redis.io/releases/redis-3.2.8.tar.gz",
-		UNSUPPORTED,
+		LIBACQUIRE_UNSUPPORTED_CHECKSUM,
 		EXIT_SUCCESS
 	},
 	{

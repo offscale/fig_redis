@@ -24,13 +24,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
 add_library("${PROJECT_NAME}_compiler_flags" INTERFACE)
 target_compile_features("${PROJECT_NAME}_compiler_flags" INTERFACE "c_std_${CMAKE_C_STANDARD}")
 
-set(gcc_like "$<COMPILE_LANG_AND_ID:C,CXX,ARMClang,AppleClang,Clang,GNU>")
+set(gcc_like "$<COMPILE_LANG_AND_ID:C,CXX,ARMClang,AppleClang,Clang,GNU,LCC>")
 set(msvc "$<COMPILE_LANG_AND_ID:C,CXX,MSVC>")
-# -g -fsanitize=address -fno-omit-frame-pointer
 target_compile_options(
         "${PROJECT_NAME}_compiler_flags"
         INTERFACE
-        "$<${gcc_like}:$<BUILD_INTERFACE:-Wall;-Wextra;-Wshadow;-Wformat=2;-Wunused;-pedantic->>"
+        "$<${gcc_like}:$<BUILD_INTERFACE:-Wall;-Wextra;-Wshadow;-Wformat=2;-Wunused;-pedantic>>"
         "$<${msvc}:$<BUILD_INTERFACE:-W3;-WX;-Zi;-permissive->>"
 )
 if (CMAKE_C_COMPILER_ID STREQUAL "Clang" OR CMAKE_C_COMPILER_ID STREQUAL "AppleClang")

@@ -15,3 +15,5 @@ Because one can't check the checksum of this file—without constantly updating 
 Recommend downloading this file out-of-band, verifying, then using it. Or adding a new issue to request re-run of CMake to get the latest version info without aforementioned security risk.
 
 Relying on non-binary held hashes and download links means they become only a verification and not a security measure.
+
+* actually, the PGP key of the commit hash needs to be verified and that should give pretty-good security for this scenario. TODO: This
