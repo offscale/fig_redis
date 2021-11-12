@@ -15,7 +15,7 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 	{
 		"3.0.504",
 		"Redis-x64-3.0.504.zip",
-		"4534581ac55ef6873cb759917df38d817414f183901c168a8ae3a97aab3770f2",
+		"5f761367601ca31f6c8969e427cacc0da4f428712954a66aab303f83e390566e",
 		"https://github.com/microsoftarchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.zip",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS

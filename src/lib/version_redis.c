@@ -59,8 +59,7 @@ struct RedisVersion get_version_info(const char *redis_versions_filepath, const 
         }
         if (strcmp(archive_name, columns[1]) == 0) {
             redisVersion.status = EXIT_SUCCESS;
-            char *version_arr_ptr = redisVersion.version;
-            get_version_from_filename(redisVersion.filename, &version_arr_ptr);
+            get_version_from_filename(redisVersion.filename, redisVersion.version);
             strncpy(redisVersion.filename, columns[1], MAX_REDIS_FILENAME);
             strncpy(redisVersion.hash, columns[3], MAX_REDIS_HASH);
             strncpy(redisVersion.url, columns[4], MAX_REDIS_URL_LEN);
