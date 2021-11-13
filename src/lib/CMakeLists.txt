@@ -1,7 +1,7 @@
 set(LIBRARY_NAME "redis_version")
 set(libacquire_git "https://raw.githubusercontent.com/offscale/libacquire/master")
 
-foreach(cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
+foreach (cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
         "FindLibreSSL.cmake" "libacquire_helpers.cmake"
         "FindLibAcquire.cmake")
     set(local_cmake_file "${CMAKE_BINARY_DIR}/cmake/${cm}")
@@ -22,13 +22,18 @@ foreach(cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
             set_http_https_lib()
 
             set_extract_lib()
+            #set(USE_MINIZ 1 PARENT_SCOPE)
+            #set(EXTRACT_LIB "MINIZ" PARENT_SCOPE)
+            #list(APPEND _Header_Files "acquire_miniz.h")
+            #set(EXTRACT_LIB "MINIZ")
+            #set(EXTRACT_LIB "${EXTRACT_LIB}" PARENT_SCOPE)
         endif ()
     endif ()
-endforeach()
+endforeach ()
 
 get_libacquire_header("${PROJECT_BINARY_DIR}/src/acquire.h")
 
-include(../../cmake/modules/GenerateRedisVersions.cmake)
+include("${CMAKE_SOURCE_DIR}/cmake/modules/GenerateRedisVersions.cmake")
 
 set(Header_Files "version_redis.h")
 
@@ -60,6 +65,7 @@ target_include_directories(
         "$<INSTALL_INTERFACE:include>"
 )
 
+message(STATUS "${PROJECT_NAME} LIBACQUIRE_LIBRARIES = ${LIBACQUIRE_LIBRARIES}")
 target_link_libraries("${LIBRARY_NAME}" PUBLIC "${LIBACQUIRE_LIBRARIES}")
 
 if (NOT DEFINED TARGET_ARCH)

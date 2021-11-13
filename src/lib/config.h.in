@@ -21,8 +21,20 @@
 
 #cmakedefine USE_LIBFETCH 1
 
+/* Extraction API */
+
+#cmakedefine USE_WINCOMPRESSAPI 1
+
+#cmakedefine USE_LIBEXTRACT 1
+
+#cmakedefine USE_ZLIB 1
+
+#cmakedefine USE_MINIZ 1
+
+#define EXTRACT_LIB "@EXTRACT_LIB@"
+
 /* Architecture (needed by MSVC) */
 
 #define _@TARGET_ARCH@_
 
-#endif /* VERSION_REDIS_CONFIG_H */
+#endif /* ! VERSION_REDIS_CONFIG_H */

@@ -32,40 +32,43 @@ struct RedisVersion get_version_info(const char *redis_versions_filepath, const 
     }
 #define MAX_LEN 256
 
-    char line[MAX_LEN], column[MAX_REDIS_HASH];
-    const char *columns[5];
-    while (fgets(line, MAX_LEN - 1, fh)) {
-        line[strcspn(line, "\n")] = 0;
-        switch (line[0]) {
-            case '\0':
-            case '#':
-                continue;
-        }
+    {
+        char line[MAX_LEN], column[MAX_REDIS_HASH];
+        const char *columns[5];
+        while (fgets(line, MAX_LEN - 1, fh)) {
+            line[strcspn(line, "\n")] = 0;
+            switch (line[0]) {
+                case '\0':
+                case '#':
+                    continue;
+            }
 
-        {
-            size_t i, j, k;
-            for (i = 0, j = 0, k = 0; line[i] != '\0'; i++)
-                switch (line[i]) {
-                    case ' ':
-                        column[j] = '\0';
-                        columns[k++] = strdup(column);
-                        j = 0;
-                        break;
-                    default:
-                        column[j++] = line[i];
-                }
-            column[j] = '\0';
-            columns[k] = strdup(column);
-        }
-        if (strcmp(archive_name, columns[1]) == 0) {
-            redisVersion.status = EXIT_SUCCESS;
-            get_version_from_filename(redisVersion.filename, redisVersion.version);
-            strncpy(redisVersion.filename, columns[1], MAX_REDIS_FILENAME);
-            strncpy(redisVersion.hash, columns[3], MAX_REDIS_HASH);
-            strncpy(redisVersion.url, columns[4], MAX_REDIS_URL_LEN);
-            redisVersion.checksum = strcmp(columns[2], "sha1") == 0 ? LIBACQUIRE_UNSUPPORTED_CHECKSUM : LIBACQUIRE_SHA256;
-            fclose(fh);
-            return redisVersion;
+            {
+                size_t i, j, k;
+                for (i = 0, j = 0, k = 0; line[i] != '\0'; i++)
+                    switch (line[i]) {
+                        case ' ':
+                            column[j] = '\0';
+                            columns[k++] = strdup(column);
+                            j = 0;
+                            break;
+                        default:
+                            column[j++] = line[i];
+                    }
+                column[j] = '\0';
+                columns[k] = strdup(column);
+            }
+            if (strcmp(archive_name, columns[1]) == 0) {
+                redisVersion.status = EXIT_SUCCESS;
+                redis_version_from_filename(redisVersion.filename, redisVersion.version);
+                strncpy(redisVersion.filename, columns[1], MAX_REDIS_FILENAME);
+                strncpy(redisVersion.hash, columns[3], MAX_REDIS_HASH);
+                strncpy(redisVersion.url, columns[4], MAX_REDIS_URL_LEN);
+                redisVersion.checksum =
+                        strcmp(columns[2], "sha1") == 0 ? LIBACQUIRE_UNSUPPORTED_CHECKSUM : LIBACQUIRE_SHA256;
+                fclose(fh);
+                return redisVersion;
+            }
         }
     }
 #undef MAX_LEN
@@ -75,7 +78,7 @@ struct RedisVersion get_version_info(const char *redis_versions_filepath, const 
     return redisVersion;
 }
 
-int download_redis(const char *download_folder, const char* version) {
+int redis_download_extract(const char *download_folder, const char *version, const char *extraction_dir) {
     char full_local_fname[NAME_MAX + 1], full_local_fname_redis_versions[NAME_MAX + 1];
     int return_code;
 
@@ -142,9 +145,11 @@ int download_redis(const char *download_folder, const char* version) {
         }
     }
     return EXIT_SUCCESS;
+    /* TODO:
+       return extract_archive(extension2archive(get_extension(full_local_fname)), full_local_fname, extraction_dir); */
 }
 
-extern void get_version_from_filename(const char filename[MAX_REDIS_FILENAME],
+extern void redis_version_from_filename(const char filename[MAX_REDIS_FILENAME],
                                       char version[MAX_REDIS_VERSION]) {
     const char *extension = get_extension(filename);
     const size_t extension_n = strlen(extension),
@@ -167,7 +172,7 @@ extern void get_version_from_filename(const char filename[MAX_REDIS_FILENAME],
     version[filename_n-j-extension_n] = '\0';
 }
 
-int ls_remote(void) {
+int redis_ls_remote(void) {
     unsigned short i;
     for(i=0; i<REDIS_VERSIONS_N; i++)
         puts(REDIS_VERSIONS[i].version);

@@ -8,14 +8,14 @@ int main(int argc, char **argv) {
     switch (argc) {
         case 2:
             if (strcmp(argv[1], "ls-remote") == 0)
-                return ls_remote();
+                return redis_ls_remote();
             else
                 goto default_label;
-        case 3:
-            return download_redis(argv[1], argv[2]);
+        case 4:
+            return redis_download_extract(argv[1], argv[2], argv[3]);
         default_label:
         default:
-            fprintf(stderr, "Usage: %s <download_folder> <redis_version>\n"
+            fprintf(stderr, "Usage: %s <download_folder> <redis_version> <prefix_dir>\n"
                             "Usage: %s ls-remote",
                             argv[0], argv[0]);
             return EXIT_FAILURE;

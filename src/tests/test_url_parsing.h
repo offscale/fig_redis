@@ -17,14 +17,14 @@ TEST x_test_version_parsing(void) {
          filename[MAX_REDIS_FILENAME];
 
     strncpy(filename, "Redis-x64-3.2.0000-preview.zip\0", MAX_REDIS_FILENAME);
-    get_version_from_filename(filename, version);
+    redis_version_from_filename(filename, version);
     ASSERT_FALSE(strcmp(version, "3.2.0000-preview") != 0);
 
     memset(version, 0, MAX_REDIS_VERSION);
     memset(filename, 0, MAX_REDIS_FILENAME);
 
     strncpy(filename, "redis-6.2.6.tar.gz\0", MAX_REDIS_FILENAME);
-    get_version_from_filename(filename, version);
+    redis_version_from_filename(filename, version);
     ASSERT_FALSE(strcmp(version, "6.2.6") != 0);
 
     PASS();

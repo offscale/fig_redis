@@ -27,11 +27,11 @@ struct RedisVersion {
     int status;
 };
 
-extern REDIS_VERSION_EXPORT int download_redis(const char *, const char*);
+extern REDIS_VERSION_EXPORT int redis_download_extract(const char *, const char*, const char*);
 
-extern REDIS_VERSION_EXPORT void get_version_from_filename(const char filename[MAX_REDIS_FILENAME],
+extern REDIS_VERSION_EXPORT void redis_version_from_filename(const char filename[MAX_REDIS_FILENAME],
                                                            char version[MAX_REDIS_VERSION]);
 
-extern REDIS_VERSION_EXPORT int ls_remote(void);
+extern REDIS_VERSION_EXPORT int redis_ls_remote(void);
 
 #endif /* VERSION_REDIS_VERSION_REDIS_H */

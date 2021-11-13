@@ -182,7 +182,7 @@ function (parse_emit_versions in_fname out_fname)
     endfunction (clear_vars)
     clear_vars()
 
-    foreach(char_index RANGE ${len})
+    foreach (char_index RANGE ${len})
         string(SUBSTRING "${contents}" "${char_index}" "1" char)
         string(LENGTH "${line}" line_len)
         if (char STREQUAL "\n")
@@ -228,14 +228,14 @@ function (parse_emit_versions in_fname out_fname)
         else ()
             string(APPEND line "${char}")
         endif ()
-    endforeach()
+    endforeach (char_index RANGE ${len})
     string(APPEND new_contents
             "};\n\n"
             "static const unsigned short REDIS_VERSIONS_N = ${number_of_lines};\n"
             "${header_conclude}")
     file(WRITE "${out_fname}" "${new_contents}")
     message(STATUS "Generated \"${out_fname}\" from \"${in_fname}\"")
-endfunction()
+endfunction (parse_emit_versions in_fname out_fname)
 
 
 function (generate_redis_versions header_file)
@@ -246,4 +246,4 @@ function (generate_redis_versions header_file)
             "${CMAKE_BINARY_DIR}/redis_versions")
 
     parse_emit_versions("${CMAKE_BINARY_DIR}/redis_versions" "${header_file}")
-endfunction ()
+endfunction (generate_redis_versions header_file)
