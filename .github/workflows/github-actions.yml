@@ -6,40 +6,79 @@ on:
       - master
 
 jobs:
-  build_ubuntu:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    name: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v2
-      - name: deps
-        run: sudo apt-get install -y libssl-dev libcurl4-openssl-dev
-      - name: build
+
+      - name: mkdir
+        run: mkdir build
+
+      - name: Install dependencies for macOS
+        run: brew install pkg-config libarchive
+        if: matrix.os == 'macos-latest'
+
+      - name: Install dependencies for Ubuntu
+        run: sudo apt-get install -y libcurl4-openssl-dev libarchive-dev
+        if: matrix.os == 'ubuntu-latest'
+
+      - name: Cache vcpkg
+        id: cache-vcpkg
+        uses: actions/cache@v2
+        with:
+          path: vcpkg
+          key: ${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}-857bccdad005957391854448a15ba30e8c118503
+        if: matrix.os == 'windows-latest'
+
+      - name: checkout vcpkg
+        uses: actions/checkout@v2
+        with:
+          repository: "microsoft/vcpkg"
+          ref: 857bccdad005957391854448a15ba30e8c118503
+          path: vcpkg
+        if: matrix.os == 'windows-latest' && steps.cache-vcpkg.outputs.cache-hit != 'true'
+
+      - name: Setup vcpkg (Windows)
+        run: ./vcpkg/bootstrap-vcpkg.bat
+        if: matrix.os == 'windows-latest'
+
+      - name: Install vcpkg ports (Windows)
+        run: ./vcpkg/vcpkg install --triplet "${{ runner.arch }}-${{ runner.os }}" "$(jq '.dependencies[]' vcpkg.json)"
+        if: matrix.os == 'windows-latest' && steps.cache-vcpkg.outputs.cache-hit != 'true'
+
+      - name: configure (with vcpkg on Windows)
+        working-directory: ./build
         run: |
-          mkdir cmake-build-"$RUNNER_OS"-debug && pushd "$_"
+          cmake -DCMAKE_BUILD_TYPE="Debug" -DCMAKE_TOOLCHAIN_FILE="%GITHUB_WORKSPACE%\vcpkg\scripts\buildsystems\vcpkg.cmake" ..
+        shell: cmd
+        if: matrix.os == 'windows-latest'
+
+      - name: configure (macOS)
+        working-directory: ./build
+        run: |
+          prefix="$(brew --prefix libarchive)"
+          export LDFLAGS="-L${prefix}/lib"
+          export CPPFLAGS="-I${prefix}/include"
+          export PKG_CONFIG_PATH="${prefix}/lib/pkgconfig"
           cmake -DCMAKE_BUILD_TYPE="Debug" ..
-          cmake --build .
-      - name: test
-        run: ctest .
-  build_macos:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: deps
-        run: brew install pkg-config  # openssl
+        if: matrix.os == 'macos-latest'
+
+      - name: configure (Ubuntu)
+        working-directory: ./build
+        run: cmake -DCMAKE_BUILD_TYPE="Debug" ..
+        if: matrix.os == 'ubuntu-latest'
+
       - name: build
-        run: |
-          mkdir cmake-build-"$RUNNER_OS"-debug && cd "$_"
-          cmake -DCMAKE_BUILD_TYPE="Debug" ..
-          cmake --build .
+        working-directory: ./build
+        run: cmake --build .
+
       - name: test
-        run: ctest .
-  build_windows:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: build
-        run: |
-          md cmake-build-debug && cd cmake-build-debug
-          cmake ..
-          cmake --build .
-      - name: test
-        run: ctest .
+        working-directory: ./build
+        run: ctest --output-on-failure -C Debug .
