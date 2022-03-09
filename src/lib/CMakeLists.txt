@@ -8,7 +8,7 @@ foreach (cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
     if (NOT EXISTS "${local_cmake_file}")
         file(DOWNLOAD "${libacquire_git}/cmake/${cm}"
                 "${local_cmake_file}")
-    endif ()
+    endif (NOT EXISTS "${local_cmake_file}")
     file(SIZE "${local_cmake_file}" local_cmake_file_size)
     if (local_cmake_file_size EQUAL 0)
         message(FATAL_ERROR "Download failed of \"${cm}\" from \"${libacquire_git}/cmake/${cm}\"")
@@ -22,14 +22,13 @@ foreach (cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
             set_http_https_lib()
 
             set_extract_lib()
-            #set(USE_MINIZ 1 PARENT_SCOPE)
-            #set(EXTRACT_LIB "MINIZ" PARENT_SCOPE)
-            #list(APPEND _Header_Files "acquire_miniz.h")
-            #set(EXTRACT_LIB "MINIZ")
-            #set(EXTRACT_LIB "${EXTRACT_LIB}" PARENT_SCOPE)
-        endif ()
+
+            set_checksum_lib()
+        endif (cm STREQUAL "libacquire_helpers.cmake")
     endif ()
-endforeach ()
+endforeach (cm "libacquire_get_header.cmake" "FindCurlCustom.cmake"
+            "FindLibreSSL.cmake" "libacquire_helpers.cmake"
+            "FindLibAcquire.cmake")
 
 get_libacquire_header("${PROJECT_BINARY_DIR}/src/acquire.h")
 
@@ -70,11 +69,13 @@ target_link_libraries("${LIBRARY_NAME}" PUBLIC "${LIBACQUIRE_LIBRARIES}")
 
 if (NOT DEFINED TARGET_ARCH)
     set(TARGET_ARCH ${CMAKE_HOST_SYSTEM_PROCESSOR})
-endif ()
+endif (NOT DEFINED TARGET_ARCH)
 
 configure_file(config.h.in "${PROJECT_BINARY_DIR}/src/config.h" @ONLY)
 
 # install rules
+include(GNUInstallDirs)
+
 include(GenerateExportHeader)
 set(_export_file "${CMAKE_CURRENT_SOURCE_DIR}/${LIBRARY_NAME}_export.h")
 generate_export_header("${LIBRARY_NAME}" EXPORT_FILE_NAME "${_export_file}")
@@ -83,14 +84,18 @@ set(installable_libs "${LIBRARY_NAME}" "${PROJECT_NAME}_compiler_flags")
 
 if (TARGET "${DEPENDANT_LIBRARY}")
     list(APPEND installable_libs "${DEPENDANT_LIBRARY}")
-endif ()
+endif (TARGET "${DEPENDANT_LIBRARY}")
 install(FILES
         "${PROJECT_BINARY_DIR}/src/acquire.h"
         "${PROJECT_BINARY_DIR}/src/config.h"
         "${_export_file}"
-        "${Header_Files}"
-        DESTINATION
-        "include")
+        ${Header_Files}
+        TYPE "INCLUDE")
 install(TARGETS ${installable_libs}
-        DESTINATION "bin"
+        DESTINATION "${CMAKE_INSTALL_DATADIR}/${LIBRARY_NAME}"
         EXPORT "${LIBRARY_NAME}Targets")
+install(TARGETS ${installable_libs}
+        EXPORT "${LIBRARY_NAME}Targets"
+        ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+        LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+        RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")

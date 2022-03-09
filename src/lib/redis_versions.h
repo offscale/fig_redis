@@ -924,8 +924,24 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
 	},
+	{
+		"7.0rc1",
+		"redis-7.0-rc1.tar.gz",
+		"9bd57d3c9ebba9dbbd6cd14b0c263ce151b0044fb6620b556449c2d82e06ef3d",
+		"http://download.redis.io/releases/redis-7.0-rc1.tar.gz",
+		LIBACQUIRE_SHA256,
+		EXIT_SUCCESS
+	},
+	{
+		"7.0rc2",
+		"redis-7.0-rc2.tar.gz",
+		"ee41f5a9f459b44baefbc021cf5096440f346f3c5fc8a1979a877a2f10603ca3",
+		"http://download.redis.io/releases/redis-7.0-rc2.tar.gz",
+		LIBACQUIRE_SHA256,
+		EXIT_SUCCESS
+	},
 };
 
-static const unsigned short REDIS_VERSIONS_N = 115;
+static const unsigned short REDIS_VERSIONS_N = 117;
 
 #endif /* VERSION_REDIS_VERSIONS_H */

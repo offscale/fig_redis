@@ -5,18 +5,18 @@
 
 static struct RedisVersion REDIS_VERSIONS[] = {
 	{
-		"3.2.100",
-		"Redis-x64-3.2.100.zip",
-		"02ccf955a1b8f76fdbeb87c23fbe07c90e3b58a312306a52f244a850a2fc9033",
-		"https://github.com/microsoftarchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.zip",
-		LIBACQUIRE_SHA256,
-		EXIT_SUCCESS
-	},
-	{
 		"3.0.504",
 		"Redis-x64-3.0.504.zip",
 		"4534581ac55ef6873cb759917df38d817414f183901c168a8ae3a97aab3770f2",
 		"https://github.com/microsoftarchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.zip",
+		LIBACQUIRE_SHA256,
+		EXIT_SUCCESS
+	},
+	{
+		"3.2.100",
+		"Redis-x64-3.2.100.zip",
+		"02ccf955a1b8f76fdbeb87c23fbe07c90e3b58a312306a52f244a850a2fc9033",
+		"https://github.com/microsoftarchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.zip",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
 	},
@@ -29,18 +29,18 @@ static struct RedisVersion REDIS_VERSIONS[] = {
 		EXIT_SUCCESS
 	},
 	{
-		"2.8.2402",
-		"Redis-x64-2.8.2402.zip",
-		"ed03900a3927e23931333141f083dfaf2cfe36c5d24994fe15a0ba765f5aa996",
-		"https://github.com/microsoftarchive/redis/releases/download/win-2.8.2402/Redis-x64-2.8.2402.zip",
-		LIBACQUIRE_SHA256,
-		EXIT_SUCCESS
-	},
-	{
 		"3.0.502",
 		"Redis-x64-3.0.502.zip",
 		"29fc76cb620ccc24931d072738051062b64c2db804ecb3aec8ece7f66f010ee4",
 		"https://github.com/microsoftarchive/redis/releases/download/win-3.0.502/Redis-x64-3.0.502.zip",
+		LIBACQUIRE_SHA256,
+		EXIT_SUCCESS
+	},
+	{
+		"2.8.2402",
+		"Redis-x64-2.8.2402.zip",
+		"ed03900a3927e23931333141f083dfaf2cfe36c5d24994fe15a0ba765f5aa996",
+		"https://github.com/microsoftarchive/redis/releases/download/win-2.8.2402/Redis-x64-2.8.2402.zip",
 		LIBACQUIRE_SHA256,
 		EXIT_SUCCESS
 	},

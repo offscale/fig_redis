@@ -52,9 +52,10 @@ if (BUILD_TESTING)
     add_subdirectory("src/tests")
 endif (BUILD_TESTING)
 
+include(GNUInstallDirs)
 install(
         FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.h"
-        DESTINATION "include"
+        TYPE "INCLUDE"
 )
 
 include(InstallRequiredSystemLibraries)
@@ -92,3 +93,5 @@ write_basic_package_version_file(
         VERSION "${${PROJECT_NAME}_VERSION_MAJOR}.${${PROJECT_NAME}_VERSION_MINOR}"
         COMPATIBILITY AnyNewerVersion
 )
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+        DESTINATION "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}")
