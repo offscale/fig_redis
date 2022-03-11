@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <errno.h>
 
+#include "version_redis.h"
+
 #define LIBACQUIRE_IMPLEMENTATION
 #include <acquire.h>
-
-#include "version_redis.h"
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #include <windows_redis_versions.h>
