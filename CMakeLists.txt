@@ -44,7 +44,11 @@ configure_file(
 )
 
 add_subdirectory("src/lib")
-add_subdirectory("src/cli")
+
+option(BUILD_CLI "Build CLI" ON)
+if (BUILD_CLI)
+    add_subdirectory("src/cli")
+endif (BUILD_CLI)
 
 include(CTest)
 if (BUILD_TESTING)

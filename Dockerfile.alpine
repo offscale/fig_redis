@@ -1,0 +1,14 @@
+FROM alpine
+
+RUN apk add --no-cache gcc cmake make pkgconf musl-dev linux-headers bsd-compat-headers curl-dev openssl-dev
+
+COPY . /version_redis
+
+WORKDIR /version_redis/build
+
+RUN cmake -DCMAKE_BUILD_TYPE="Debug" .. && \
+    cmake --build .
+
+CMD ctest .
+
+ENTRYPOINT ["/version_redis/build/version_redis_c", "--version"]

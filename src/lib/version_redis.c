@@ -3,7 +3,6 @@
 
 #define LIBACQUIRE_IMPLEMENTATION
 #include <acquire.h>
-#undef LIBACQUIRE_IMPLEMENTATION
 
 #include "version_redis.h"
 

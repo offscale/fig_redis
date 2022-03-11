@@ -64,6 +64,14 @@ target_include_directories(
         "$<INSTALL_INTERFACE:include>"
 )
 
+get_cmake_property(_variableNames VARIABLES)
+foreach (_variableName ${_variableNames})
+    string(SUBSTRING "${_variableName}" 0 4 maybe_use)
+    if (maybe_use STREQUAL "USE_")
+        target_compile_definitions("${LIBRARY_NAME}" PUBLIC "${_variableName}=${${_variableName}}")
+    endif (maybe_use STREQUAL "USE_")
+endforeach(_variableName ${_variableNames})
+
 message(STATUS "${PROJECT_NAME} LIBACQUIRE_LIBRARIES = ${LIBACQUIRE_LIBRARIES}")
 target_link_libraries("${LIBRARY_NAME}" PUBLIC "${LIBACQUIRE_LIBRARIES}")
 
@@ -72,6 +80,10 @@ if (NOT DEFINED TARGET_ARCH)
 endif (NOT DEFINED TARGET_ARCH)
 
 configure_file(config.h.in "${PROJECT_BINARY_DIR}/src/config.h" @ONLY)
+
+#######################################
+# Export / installation configuration #
+#######################################
 
 # install rules
 include(GNUInstallDirs)

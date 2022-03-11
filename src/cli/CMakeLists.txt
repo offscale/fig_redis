@@ -21,10 +21,14 @@ add_executable(
 
 target_link_libraries("${EXEC_NAME}" PRIVATE "redis_version")
 
-if (TARGET "${DEPENDANT_LIBRARY}")
-    list(APPEND installable_libs "${DEPENDANT_LIBRARY}")
-endif ()
-# install(FILES "${Header_Files}" DESTINATION "include")
-install(TARGETS ${installable_libs}
-        DESTINATION "bin"
+# install rules
+include(GNUInstallDirs)
+
+install(TARGETS "${EXEC_NAME}"
+        DESTINATION "${CMAKE_INSTALL_DATADIR}/${EXEC_NAME}"
         EXPORT "${EXEC_NAME}Targets")
+install(TARGETS ${installable_libs}
+        EXPORT "${EXEC_NAME}Targets"
+        ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+        LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+        RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")

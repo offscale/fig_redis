@@ -29,36 +29,36 @@ jobs:
         run: sudo apt-get install -y libcurl4-openssl-dev libarchive-dev
         if: matrix.os == 'ubuntu-latest'
 
-      - name: Cache vcpkg
-        id: cache-vcpkg
-        uses: actions/cache@v2
-        with:
-          path: vcpkg
-          key: ${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}-857bccdad005957391854448a15ba30e8c118503
-        if: matrix.os == 'windows-latest'
-
-      - name: checkout vcpkg
-        uses: actions/checkout@v2
-        with:
-          repository: "microsoft/vcpkg"
-          ref: 857bccdad005957391854448a15ba30e8c118503
-          path: vcpkg
-        if: matrix.os == 'windows-latest' && steps.cache-vcpkg.outputs.cache-hit != 'true'
-
-      - name: Setup vcpkg (Windows)
-        run: ./vcpkg/bootstrap-vcpkg.bat
-        if: matrix.os == 'windows-latest'
-
-      - name: Install vcpkg ports (Windows)
-        run: ./vcpkg/vcpkg install --triplet "${{ runner.arch }}-${{ runner.os }}" "$(jq '.dependencies[]' vcpkg.json)"
-        if: matrix.os == 'windows-latest' && steps.cache-vcpkg.outputs.cache-hit != 'true'
-
-      - name: configure (with vcpkg on Windows)
-        working-directory: ./build
-        run: |
-          cmake -DCMAKE_BUILD_TYPE="Debug" -DCMAKE_TOOLCHAIN_FILE="%GITHUB_WORKSPACE%\vcpkg\scripts\buildsystems\vcpkg.cmake" ..
-        shell: cmd
-        if: matrix.os == 'windows-latest'
+#      - name: Cache vcpkg
+#        id: cache-vcpkg
+#        uses: actions/cache@v2
+#        with:
+#          path: vcpkg
+#          key: ${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}-857bccdad005957391854448a15ba30e8c118503
+#        if: matrix.os == 'windows-latest'
+#
+#      - name: checkout vcpkg
+#        uses: actions/checkout@v2
+#        with:
+#          repository: "microsoft/vcpkg"
+#          ref: 857bccdad005957391854448a15ba30e8c118503
+#          path: vcpkg
+#        if: matrix.os == 'windows-latest' && steps.cache-vcpkg.outputs.cache-hit != 'true'
+#
+#      - name: Setup vcpkg (Windows)
+#        run: ./vcpkg/bootstrap-vcpkg.bat
+#        if: matrix.os == 'windows-latest'
+#
+#      - name: Install vcpkg ports (Windows)
+#        run: ./vcpkg/vcpkg install --triplet "${{ runner.arch }}-${{ runner.os }}" "$(jq '.dependencies[]' vcpkg.json)"
+#        if: matrix.os == 'windows-latest' && steps.cache-vcpkg.outputs.cache-hit != 'true'
+#
+#      - name: configure (with vcpkg on Windows)
+#        working-directory: ./build
+#        run: |
+#          cmake -DCMAKE_BUILD_TYPE="Debug" -DCMAKE_TOOLCHAIN_FILE="%GITHUB_WORKSPACE%\vcpkg\scripts\buildsystems\vcpkg.cmake" ..
+#        shell: cmd
+#        if: matrix.os == 'windows-latest'
 
       - name: configure (macOS)
         working-directory: ./build
@@ -70,10 +70,10 @@ jobs:
           cmake -DCMAKE_BUILD_TYPE="Debug" ..
         if: matrix.os == 'macos-latest'
 
-      - name: configure (Ubuntu)
+      - name: configure (Ubuntu and Windows)
         working-directory: ./build
         run: cmake -DCMAKE_BUILD_TYPE="Debug" ..
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os != 'macos-latest'
 
       - name: build
         working-directory: ./build
